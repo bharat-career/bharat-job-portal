@@ -60,6 +60,7 @@ export const Footer: React.FC = () => {
               Candidate Services
             </h3>
             <ul className="space-y-2 text-sm text-[#43474e]">
+              <li><Link to="/learning-support" className="text-[#0051d5] font-bold hover:underline transition-colors flex items-center gap-1">★ Learning & Support Hub</Link></li>
               <li><Link to="/calendar" className="hover:text-[#0051d5] transition-colors">Examination Calendar</Link></li>
               <li><Link to="/departments" className="hover:text-[#0051d5] transition-colors">Department Directory</Link></li>
               <li><Link to="/dashboard" className="hover:text-[#0051d5] transition-colors">Saved Job Tracker</Link></li>

@@ -3,6 +3,7 @@ import { JobService } from '../services/jobService';
 import { Job } from '../types';
 import { AdminEditJobModal } from '../components/AdminEditJobModal';
 import { SupabaseConnectModal } from '../components/SupabaseConnectModal';
+import { CronSyncModal } from '../components/CronSyncModal';
 import { useAuth } from '../context/AuthContext';
 import { 
   PlusCircle, 
@@ -19,7 +20,10 @@ import {
   ExternalLink,
   Database,
   Lock,
-  KeyRound
+  KeyRound,
+  Radio,
+  Terminal,
+  RefreshCw
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -32,6 +36,7 @@ export const AdminDashboardPage: React.FC = () => {
   const [selectedJobForEdit, setSelectedJobForEdit] = useState<Job | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSupabaseModalOpen, setIsSupabaseModalOpen] = useState(false);
+  const [isCronModalOpen, setIsCronModalOpen] = useState(false);
   const [actionNotice, setActionNotice] = useState<string | null>(null);
 
   useEffect(() => {
@@ -228,6 +233,15 @@ export const AdminDashboardPage: React.FC = () => {
           </button>
 
           <button
+            onClick={() => setIsCronModalOpen(true)}
+            className="px-3.5 py-2.5 bg-emerald-900/80 hover:bg-emerald-800 text-emerald-300 text-xs font-semibold rounded-xl flex items-center gap-1.5 transition-colors border border-emerald-700 shadow-2xs"
+            title="Inspect or execute automated gazette crawler"
+          >
+            <Radio className="w-3.5 h-3.5 text-emerald-400 animate-pulse" />
+            <span>National Cron Aggregator</span>
+          </button>
+
+          <button
             onClick={handleResetSeeds}
             className="px-3.5 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl flex items-center gap-1.5 transition-colors border border-slate-700"
             title="Reset to factory seed data"
@@ -404,6 +418,13 @@ export const AdminDashboardPage: React.FC = () => {
       <SupabaseConnectModal
         isOpen={isSupabaseModalOpen}
         onClose={() => setIsSupabaseModalOpen(false)}
+      />
+
+      {/* National Cron Aggregator Modal */}
+      <CronSyncModal
+        isOpen={isCronModalOpen}
+        onClose={() => setIsCronModalOpen(false)}
+        onJobsRefreshed={() => setJobs(JobService.getJobs())}
       />
     </div>
   );

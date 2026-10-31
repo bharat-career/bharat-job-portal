@@ -15,12 +15,14 @@ import { AuthPage } from './pages/AuthPage';
 import { UserDashboardPage } from './pages/UserDashboardPage';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
 import { AboutContactPage } from './pages/AboutContactPage';
+import { LearningHelpPage } from './pages/LearningHelpPage';
 
 // Modals
 import { GazettePdfModal } from './components/GazettePdfModal';
 import { OfficialApplyModal } from './components/OfficialApplyModal';
 import { EligibilityCalculatorModal } from './components/EligibilityCalculatorModal';
 import { JobAlertModal } from './components/JobAlertModal';
+import { CronSyncModal } from './components/CronSyncModal';
 import { Job } from './types';
 import { JobService } from './services/jobService';
 
@@ -32,6 +34,7 @@ const AppContent: React.FC = () => {
   const [activeApplyJob, setActiveApplyJob] = useState<Job | null>(null);
   const [calculatorOpen, setCalculatorOpen] = useState(false);
   const [alertsOpen, setAlertsOpen] = useState(false);
+  const [cronModalOpen, setCronModalOpen] = useState(false);
 
   // Background sync with Supabase on mount
   React.useEffect(() => {
@@ -51,6 +54,7 @@ const AppContent: React.FC = () => {
       <Navbar 
         onOpenAlerts={() => setAlertsOpen(true)}
         onOpenCalculator={() => setCalculatorOpen(true)}
+        onOpenCron={() => setCronModalOpen(true)}
       />
 
       {/* Main Routed Area */}
@@ -100,6 +104,7 @@ const AppContent: React.FC = () => {
               } 
             />
             <Route path="/admin" element={<AdminDashboardPage />} />
+            <Route path="/learning-support" element={<LearningHelpPage />} />
             <Route path="/about" element={<AboutContactPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
@@ -130,6 +135,14 @@ const AppContent: React.FC = () => {
       <JobAlertModal
         isOpen={alertsOpen}
         onClose={() => setAlertsOpen(false)}
+      />
+
+      <CronSyncModal
+        isOpen={cronModalOpen}
+        onClose={() => setCronModalOpen(false)}
+        onJobsRefreshed={() => {
+          JobService.syncFromSupabase();
+        }}
       />
     </div>
   );

@@ -20,17 +20,20 @@ import {
 interface NavbarProps {
   onOpenAlerts?: () => void;
   onOpenCalculator?: () => void;
+  onOpenCron?: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({ 
   onOpenAlerts, 
   onOpenCalculator,
+  onOpenCron,
 }) => {
   const location = useLocation();
   const navigate = useNavigate();
   const { 
     user, 
     isAdmin, 
+    dbSyncStatus,
     savedJobIds, 
     textScale, 
     setTextScale, 
@@ -57,6 +60,7 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'Departments & Ministries', path: '/departments' },
     { label: 'State Jobs', path: '/states' },
     { label: 'Exam Calendar', path: '/calendar' },
+    { label: 'Learning & Support', path: '/learning-support' },
     { label: 'About & Contact', path: '/about' },
   ];
 
@@ -84,6 +88,19 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
               Toll-Free: 1800-11-2025
             </span>
+
+            {/* National Cron Aggregator Button */}
+            {onOpenCron && (
+              <button
+                type="button"
+                onClick={onOpenCron}
+                className="inline-flex items-center gap-1.5 text-[11px] font-bold text-[#0051d5] hover:text-[#001f3e] bg-white px-2.5 py-0.5 rounded-full border border-blue-200 transition-colors shadow-2xs cursor-pointer"
+                title="Automated National Job Crawler & Cron Engine"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span>Cron Aggregator</span>
+              </button>
+            )}
 
             {/* Subtle Admin Mode Indicator only when user is logged in as Admin */}
             {isAdmin && (

@@ -1,0 +1,103 @@
+[
+  {
+    "id": "cron-run-1793474803834",
+    "timestamp": "2026-10-31T19:26:43.834Z",
+    "durationMs": 1,
+    "triggeredBy": "portal-auto",
+    "sourcesScanned": 8,
+    "newPositionsDiscovered": 5,
+    "totalActiveVacancies": 73262,
+    "totalJobsIndexed": 11,
+    "sources": [
+      {
+        "name": "UPSC Official Gazette Feed",
+        "url": "https://upsc.gov.in",
+        "latencyMs": 142,
+        "status": "synced",
+        "recordsFound": 2
+      },
+      {
+        "name": "SSC Central Employment Noticeboard",
+        "url": "https://ssc.gov.in",
+        "latencyMs": 198,
+        "status": "synced",
+        "recordsFound": 3
+      },
+      {
+        "name": "Ministry of Railways (RRB Central CEN)",
+        "url": "https://rrbapply.gov.in",
+        "latencyMs": 215,
+        "status": "synced",
+        "recordsFound": 1
+      },
+      {
+        "name": "IBPS & Banking Personnel Recruitment",
+        "url": "https://ibps.in",
+        "latencyMs": 180,
+        "status": "synced",
+        "recordsFound": 1
+      },
+      {
+        "name": "Defence Recruitment Directorate (Army/Navy/IAF/DRDO)",
+        "url": "https://mod.gov.in",
+        "latencyMs": 230,
+        "status": "synced",
+        "recordsFound": 2
+      },
+      {
+        "name": "State Public Service Commissions (UPPSC, BPSC, MPSC)",
+        "url": "https://nic.in",
+        "latencyMs": 275,
+        "status": "synced",
+        "recordsFound": 2
+      },
+      {
+        "name": "National Medical & Healthcare Board (AIIMS/ESIC)",
+        "url": "https://aiimsexams.ac.in",
+        "latencyMs": 160,
+        "status": "synced",
+        "recordsFound": 1
+      },
+      {
+        "name": "Teaching & Educational Autonomous Bodies (KVS/NVS/UGC)",
+        "url": "https://kvsangathan.nic.in",
+        "latencyMs": 190,
+        "status": "synced",
+        "recordsFound": 1
+      }
+    ],
+    "dispatchedUpdates": [
+      {
+        "id": "isro-scientist-2025-special",
+        "title": "ISRO ICRB Centralized Recruitment: Scientist/Engineer SC (Space Science & Satellites)",
+        "organization": "Indian Space Research Organisation (ISRO)",
+        "vacancies": 480
+      },
+      {
+        "id": "drdo-scientist-b-gate-2025",
+        "title": "DRDO Recruitment of Scientist \"B\" via RAC (GATE 2024 / 2025)",
+        "organization": "Defence Research & Development Organisation (DRDO)",
+        "vacancies": 630
+      },
+      {
+        "id": "ibps-crp-clerk-xv-2025",
+        "title": "IBPS Common Recruitment Process (CRP) Clerks XV for 11 Public Sector Banks",
+        "organization": "Institute of Banking Personnel Selection (IBPS)",
+        "vacancies": 6128
+      },
+      {
+        "id": "iaf-afcat-02-2025",
+        "title": "Air Force Common Admission Test (AFCAT 02/2025) for Flying & Ground Duty",
+        "organization": "Indian Air Force (IAF)",
+        "vacancies": 317
+      },
+      {
+        "id": "bpsc-tre-4-teacher-2025",
+        "title": "BPSC School Teacher Recruitment Examination (TRE 4.0) for Classes 1 to 12",
+        "organization": "Bihar Public Service Commission (BPSC)",
+        "vacancies": 25400
+      }
+    ],
+    "status": "success"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "usr-test-1": {
+    "id": "usr-test-1",
+    "fullName": "Abhishek Bhardwaj",
+    "phoneNumber": "+91 98765 43210",
+    "category": "General",
+    "savedJobIds": [
+      "upsc-cse-2025"
+    ],
+    "lastSavedToDbAt": "2026-10-31T19:26:50.305Z",
+    "updatedAt": "2026-10-31T19:26:50.305Z"
+  }
+}

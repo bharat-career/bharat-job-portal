@@ -90,6 +90,20 @@ export interface UserProfile {
   highestQualification?: string;
   category?: 'General' | 'OBC' | 'SC' | 'ST' | 'EWS';
   savedJobIds: string[];
+  lastSavedToDbAt?: string;
+}
+
+export interface SupportTicket {
+  id: string;
+  category: string;
+  subject: string;
+  description: string;
+  candidateName: string;
+  emailOrPhone: string;
+  otrNumber?: string;
+  status: 'Registered / Under Scrutiny' | 'In Progress' | 'Resolved';
+  createdAt: string;
+  slaResolutionWindow?: string;
 }
 
 export interface JobAlertSubscription {
