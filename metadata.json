@@ -1,0 +1,6 @@
+{
+  "name": "Bharat Career Hub",
+  "description": "Unified public sector job recruitment tracking and career intelligence portal. Aggregating authorized notifications across Union Ministries, State Public Service Commissions, Railways, and Defence Boards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
